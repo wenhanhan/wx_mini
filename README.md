@@ -2,11 +2,6 @@
 # wx_mini
 伟星商城小程序
 =======
-# CRMEB XCX v3.0
-
-#### 介绍
-  CRMEB 3.0 小程序
-
 #### 使用说明
 
 1. 配置config.js 中的 HTTP_REQUEST_URL 修改为自己的域名
@@ -15,8 +10,6 @@
 3. 前往微信小程序后台配置业务，下载 合法域名
 
 ### 目录结构
-
-~~~
 └─view 小程序存放根目录
   ├─api 接口统一存放目录
   │ ├─activity.js 营销接口
@@ -109,6 +102,3 @@
   ├─app.wxss 样式
   ├─config.js 程序配置
   └─project.config.json 项目配置
-
-~~~
->>>>>>> first commit
