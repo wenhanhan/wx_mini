@@ -155,7 +155,7 @@
     </view>
     <navigator open-type='switchTab' class="animated item {{animated==true?'bounceIn':''}}" url='/pages/order_addcart/order_addcart'>
       <view class='iconfont icon-gouwuche1'>
-        <text class='num bg-color'>{{CartCount || 0}}</text>
+        <text class='num bg-color' style="background:#ff3c2b !important">{{CartCount || 0}}</text>
       </view>
       <view>购物车</view>
     </navigator>

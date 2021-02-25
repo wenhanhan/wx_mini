@@ -26,7 +26,7 @@ view{box-sizing:border-box;}
 .acea-row.row-center-wrapper{align-items:center;justify-content:center;}
 .acea-row.row-between-wrapper{align-items:center;justify-content:space-between;}
 .font-color{color:#fc4141!important;}
-.bg-color{background-color:#e93323!important;}
+.bg-color{background-color:#3BA4EA!important;}
 .icon-color{color:#ff3c2b;}
 .cart-color{color:#ff3700!important;border:1px solid #ff3700!important;}
 /* 单选 */
@@ -36,7 +36,7 @@ background-color: #e93323 !important;}
 /* 多选 */
 checkbox .wx-checkbox-input{border-radius:50%;width:38rpx;height:38rpx;}
 checkbox .wx-checkbox-input.wx-checkbox-input-checked{
-border: 1px solid #e93323 !important;background-color: #e93323 !important;color:#fff!important;}
+border: 1px solid #3BA4EA !important;background-color: #3BA4EA !important;color:#fff!important;}
 checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {font-size:35rpx;}
 .line1{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .line2{word-break:break-all;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
@@ -64,7 +64,5 @@ button::after{border:0;}
 .mt-30{margin-top:30rpx;}
 .mt-20{margin-top:20rpx;}
 .mr-10{margin-right:10rpx;}
-
-
 
 

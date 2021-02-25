@@ -6,7 +6,7 @@ page{background-color:#fff!important;}
 .productSort .header .input input{font-size:26rpx;height:100%;width: 90%;}
 .productSort .aside{position:fixed;width:180rpx;left:0;bottom:0;background-color:#f7f7f7;overflow-y:auto;overflow-x:hidden;}
 .productSort .aside .item{height:80rpx;width:100%;font-size:26rpx;color:#424242;}
-.productSort .aside .item.on{background-color:#fff;border-left:4rpx solid #fc4141;width:100%;text-align:center;color:#fc4141;font-weight:bold;}
+.productSort .aside .item.on{background-color:#fff;border-left:4rpx solid #3BA4EA;width:100%;text-align:center;color:#3BA4EA;font-weight:bold;}
 .productSort .conter{margin:98rpx 0 0 180rpx;padding:0 14rpx;}
 .productSort .conter .listw{padding-top:20rpx;vertical-align: top;}
 .productSort .conter .listw .title{height:90rpx;}

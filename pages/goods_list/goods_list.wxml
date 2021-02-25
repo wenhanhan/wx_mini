@@ -10,7 +10,7 @@
       <view class='iconfont {{is_switch==true?"icon-pailie":"icon-tupianpailie"}}' bindtap='Changswitch'></view>
    </view>
    <view class='nav acea-row row-middle' style='top:{{navH}}rpx;margin-top:86rpx'>
-     <view class='item {{title ? "font-color":""}}' bindtap='set_where' data-type='1'>{{title ? title:'默认'}}</view>
+     <view class='item {{title ? "font-color1":""}}' bindtap='set_where' data-type='1'>{{title ? title:'默认'}}</view>
      <view class='item' bindtap='set_where' data-type='2'>
       价格
       <image wx:if="{{price==1}}" src='/images/up.png'></image>
@@ -24,7 +24,7 @@
         <image wx:else src='/images/horn.png'></image>
       </view>
      <!-- down -->
-     <view class='item {{nows ? "font-color":""}}' bindtap='set_where' data-type='4'>新品</view>
+     <view class='item {{nows ? "font-color1":""}}' bindtap='set_where' data-type='4'>新品</view>
    </view>
    <view class='list acea-row row-between-wrapper {{is_switch==true?"":"on"}}'>
       <block wx:for="{{productList}}" wx:key='index'>

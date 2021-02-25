@@ -3,7 +3,7 @@
    <view class='nav acea-row'>
       <view class='item {{type==0 ? "on":""}}' data-type='0' bindtap='changeType'>全部</view>
       <view class='item {{type==1 ? "on":""}}' data-type='1' bindtap='changeType'>消费</view>
-      <view class='item {{type==2 ? "on":""}}' data-type='2' bindtap='changeType'>充值</view>
+      <!-- <view class='item {{type==2 ? "on":""}}' data-type='2' bindtap='changeType'>充值</view> -->
    </view>
    <view class='sign-record'>
       <view class='list' wx:for="{{userBillList}}" wx:key='index'>

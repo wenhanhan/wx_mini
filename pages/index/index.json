@@ -5,5 +5,12 @@
     "promotionGood": "/components/promotionGood/index",
     "coupon-window": "/components/coupon-window/index",
     "home": "/components/home/index"
-  }
+  },
+    "navigationBarBackgroundColor": "#3BA4EA",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "伟星商城",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false,
+    "navigationStyle":"default"
 }

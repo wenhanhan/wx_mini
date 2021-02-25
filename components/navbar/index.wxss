@@ -1,6 +1,6 @@
 @import '/app.wxss';
 .navbar{position:fixed;background-color:#fff;top:0;left:0;z-index:999;width:100%;}
-.navbar.on{background-color:#e93323;}
+.navbar.on{background-color:#3BA4EA;}
 .navbar.black{background-color:#232323;}
 .navbar.gray{background-color:#666;}
 .navbar.red{background-color:#eb5447;}

@@ -64,6 +64,7 @@ Page({
   getSeckillConfig: function () {
     let that = this; 
     getSeckillIndexTime().then(res=>{
+      console.log(res.data)
       that.setData({ topImage: res.data.lovely, timeList: res.data.seckillTime, active: res.data.seckillTimeIndex });
       if (that.data.timeList.length) {
         // wxh.time(that.data.timeList[that.data.active].stop, that);

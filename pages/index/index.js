@@ -107,6 +107,11 @@ Page({
   onColse:function(){
     this.setData({ window: false});
   },
+  setGoodsSearch:function(){
+    wx.navigateTo({
+      url: '/pages/goods_search/index',
+    })
+ },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

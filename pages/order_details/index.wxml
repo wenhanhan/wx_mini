@@ -18,15 +18,15 @@
           <view class="{{status.type == 4 ? 'on':''}}">已完成</view>
         </view>
         <view class='progress acea-row row-between-wrapper'>
-          <view class='iconfont {{status.type == 0 || status.type == -9  ? "icon-webicon318":"icon-yuandianxiao"}} {{status.type >= 0 ? "font-color":""}}'></view>
+          <view class='iconfont {{status.type == 0 || status.type == -9  ? "icon-webicon318":"icon-yuandianxiao"}} {{status.type >= 0 ? "font-color1":""}}'></view>
           <view class='line {{status.type > 0 ? "bg-color":""}}'></view>
-          <view class='iconfont {{status.type == 1 ? "icon-webicon318":"icon-yuandianxiao"}} {{status.type >= 1 ? "font-color":""}}'></view>
+          <view class='iconfont {{status.type == 1 ? "icon-webicon318":"icon-yuandianxiao"}} {{status.type >= 1 ? "font-color1":""}}'></view>
           <view class='line {{status.type > 1 ? "bg-color":""}}' wx:if="{{orderInfo.shipping_type == 1}}"></view>
-          <view class='iconfont {{status.type == 2 ? "icon-webicon318":"icon-yuandianxiao"}} {{status.type >= 2 ? "font-color":""}}' wx:if="{{orderInfo.shipping_type == 1}}"></view>
+          <view class='iconfont {{status.type == 2 ? "icon-webicon318":"icon-yuandianxiao"}} {{status.type >= 2 ? "font-color1":""}}' wx:if="{{orderInfo.shipping_type == 1}}"></view>
           <view class='line {{status.type > 2 ? "bg-color":""}}'></view>
-          <view class='iconfont {{status.type == 3 ? "icon-webicon318":"icon-yuandianxiao"}} {{status.type >= 3 ? "font-color":""}}'></view>
+          <view class='iconfont {{status.type == 3 ? "icon-webicon318":"icon-yuandianxiao"}} {{status.type >= 3 ? "font-color1":""}}'></view>
           <view class='line {{status.type > 3 ? "bg-color":""}}'></view>
-          <view class='iconfont {{status.type == 4 ? "icon-webicon318":"icon-yuandianxiao"}} {{status.type >= 4 ? "font-color":""}}'></view>
+          <view class='iconfont {{status.type == 4 ? "icon-webicon318":"icon-yuandianxiao"}} {{status.type >= 4 ? "font-color1":""}}'></view>
         </view>
     </view>
     <view class="writeOff" wx:if="{{orderInfo.shipping_type == 2 && orderInfo.paid}}">

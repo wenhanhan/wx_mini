@@ -27,5 +27,5 @@ page{background-color:#F5F5F5!important;}
 .flash-sale .list .item .text .progress .bg-reds{width: 0;height: 100%;transition: width 0.6s ease;background:linear-gradient(90deg,rgba(233,51,35,1) 0%,rgba(255,137,51,1) 100%);}
 .flash-sale .list .item .text .progress .piece{position:absolute;left:8%;transform:translate(0%,-50%);top:49%;font-size:16rpx;color:#FFB9B9;}
 .flash-sale .list .item .grab{font-size:28rpx;color:#fff;width:150rpx;height:54rpx;border-radius:27rpx;text-align:center;line-height:54rpx;position:absolute;right:30rpx;bottom:30rpx;}
-.flash-sale .saleBox {width: 100%;height: 230rpx;background: rgba(233, 51, 35, 1);border-radius: 0 0 50rpx 50rpx;}
+.flash-sale .saleBox {width: 100%;height: 230rpx;background:#3BA4EA;border-radius: 0 0 50rpx 50rpx;}
 

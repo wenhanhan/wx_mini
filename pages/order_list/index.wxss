@@ -6,7 +6,7 @@
 .my-order .header .picTxt .pictrue image{width:100%;height:100%;}
 .my-order .nav{background-color:#fff;width:690rpx;height:140rpx;border-radius:6rpx;margin:-73rpx auto 0 auto;}
 .my-order .nav .item{text-align:center;font-size:26rpx;color:#282828;padding:29rpx 0;}
-.my-order .nav .item.on{font-weight:bold;border-bottom:5rpx solid #e93323;}
+.my-order .nav .item.on{font-weight:bold;border-bottom:5rpx solid #3BA4EA;}
 .my-order .nav .item .num{margin-top:18rpx;}
 .my-order .list{width:690rpx;margin:14rpx auto 0 auto;}
 .my-order .list .item{background-color:#fff;border-radius:6rpx;margin-bottom:14rpx;}

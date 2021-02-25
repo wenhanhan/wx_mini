@@ -103,14 +103,14 @@
   },
   "tabBar": {
     "backgroundColor": "#ffffff",
-    "color": "#282828",
-    "selectedColor": "#e93323",
+    "color": "#8E8E93",
+    "selectedColor": "#3BA4EA",
     "borderStyle": "white",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "images/1-001.png",
-        "selectedIconPath": "images/1-002.png",
+        "iconPath": "images/1-002.png",
+        "selectedIconPath": "images/1-001.png",
         "text": "首页"
       },
       {

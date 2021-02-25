@@ -60,6 +60,7 @@ Page({
     var that = this;
     if (this.data.MyMenus.length) return;
     getMenuList().then(res=>{
+      console.log(res.data)
       that.setData({ MyMenus: res.data.routine_my_menus });
     });
   },
@@ -70,6 +71,7 @@ Page({
     var that=this;
     getUserInfo().then(res=>{
       const generalContent="generalContent.promoterNum";
+      console.log(res.data)
       that.setData({ 
         userInfo: res.data, 
         loginType: res.data.login_type,

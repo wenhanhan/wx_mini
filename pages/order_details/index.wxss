@@ -8,7 +8,7 @@
 .order-details .header .data .time{margin-left:20rpx;}
 .order-details .nav{background-color:#fff;font-size:26rpx;color:#282828;padding:25rpx 0;}
 .order-details .nav .navCon{padding:0 40rpx;}
-.order-details .nav .on{color: #e93323;}
+.order-details .nav .on{color: #3BA4EA;}
 .order-details .nav .progress{padding:0 65rpx;margin-top:10rpx;}
 .order-details .nav .progress .line{width:100rpx;height:2rpx;background-color:#939390;}
 .order-details .nav .progress .iconfont{font-size:25rpx;color:#939390;margin-top:-2rpx;}
@@ -57,3 +57,4 @@
 .order-details .address .name .iconfont {font-size: 34rpx;margin-left: 10rpx;}
 .order-details .contactCustomer{width:100%;height:86rpx;font-size:30rpx;text-align:center;line-height:86rpx;background-color:#fff;}
 .order-details .contactCustomer .iconfont{font-size:34rpx;margin-right: 14rpx;}
+.font-color1{color: #3BA4EA!important;}

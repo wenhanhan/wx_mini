@@ -26,6 +26,7 @@
 .productList .list .item .text .vip .vip-money{font-size:24rpx;color:#282828;font-weight:bold;}
 .productList .list .item .text .vip .vip-money image{width:46rpx;height:21rpx;margin-left:4rpx;}
 .noCommodity{background-color:#fff;}
+.font-color1{color: #3BA4EA!important;}
 
 
 
