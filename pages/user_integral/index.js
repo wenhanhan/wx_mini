@@ -56,7 +56,7 @@ Page({
         page:that.data.page+1,
         loading:false,
         loadend:loadend,
-        loadTitle:loadend ? '哼~😕我也是有底线的~':"加载更多"
+        loadTitle:loadend ? '到底啦~':"加载更多"
       });
     },function(res){
       that.setData({ loading: false, loadTitle:'加载更多'});

@@ -8,6 +8,7 @@
     "pages/user_get_coupon/index",
     "pages/order_confirm/index",
     "pages/goods_list/goods_list",
+    "pages/decorate_list/decorate_list",
     "pages/user_coupon/index",
     "pages/goods_comment_list/index",
     "pages/user_goods_collection/index",
@@ -46,6 +47,9 @@
     "pages/order_cancellation/index",
     "pages/commission_rank/index",
     "pages/promoter_rank/index",
+    "pages/coupons_mall/coupons_list/goods_list",
+    "pages/coupons_mall/coupons_details/index",
+    "pages/coupons_mall/coupons_confirm/index",
     "components/navbar/index",
     "components/recommend/index",
     "components/share-red-packets/index",
@@ -62,7 +66,8 @@
     "components/home/index",
     "components/write-off/index",
     "components/price-change/index",
-    "components/general-window/index"
+    "components/general-window/index",
+    "components/couponsGoods/index"
   ],
   "subPackages": [
     {

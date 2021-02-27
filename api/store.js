@@ -134,3 +134,10 @@ export function getSearchKeyword(){
 export function storeListApi(data) {
   return request.get("store_list", data);
 }
+/**
+ * 获取装修清单区域信息
+ * @returns {*}
+ */
+export function getZoneList() {
+  return request.get("zone_list",{},{noAuth:true});
+}

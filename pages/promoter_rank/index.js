@@ -53,7 +53,7 @@ Page({
         loading:false,
         rankList: that.data.rankList,
         page: that.data.page+1,
-        loadTitle: loadend ? "我也是有底线的" : '加载更多',
+        loadTitle: loadend ? "到底啦~" : '加载更多',
         One: that.data.One,
         Two: that.data.Two,
         Three: that.data.Three,

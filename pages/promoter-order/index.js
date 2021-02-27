@@ -62,7 +62,7 @@ Page({
         recordList: recordList,
         loadend: loadend,
         loading: false,
-        loadTitle: loadend ? "我也是有底线的" : '加载更多',
+        loadTitle: loadend ? "到底啦~" : '加载更多',
         page: that.data.page + 1,
         recordCount: res.data.count
       });
