@@ -5,7 +5,7 @@
 
 1. 配置config.js 中的 HTTP_REQUEST_URL 修改为自己的域名
 2. 配置微信开发工具中小程序的appid
-3. 前往CRMEB后台配置小程序 appid 和 AppSecret 
+3. 前往后台配置小程序 appid 和 AppSecret 
 3. 前往微信小程序后台配置业务，下载 合法域名
 
 ### 目录结构

@@ -1,4 +1,4 @@
-import { getProductslist, getProductHot,getGroomList,getZoneList } from '../../api/store.js';
+import { getDecProductslist, getProductHot,getGroomList,getZoneList } from '../../api/store.js';
 const app = getApp();
 Page({
 
@@ -7,7 +7,24 @@ Page({
    */
   data: {
     type:5,//装修清单 轮播图id
-    multiArray: [['小学','初中','高中'], ['一年级', '二年级','三年级','四年级','五年级','六年级']],
+    multiArray: [['长安区','裕华区','桥西区'], ['万达小区', '锦城小区']],
+    zone_list:[],
+    zone:[
+      {
+        grade:'长安区',
+        class:['万达小区','锦城小区']
+      },
+      {
+        grade:'裕华区',
+        class:['二十里铺']
+      },
+      {
+        grade:'桥西区',
+        class:['保利花园']
+      }
+    ],
+    zone_name:'全部',
+    multiIndex: [0, 0],
     imgUrls:[],
     productList:[],
     parameter: {
@@ -24,6 +41,7 @@ Page({
       keyword: '',
       priceOrder: '',
       salesOrder: '',
+      zone_cate_id:'',//默认按全部筛选
       news: 0,
       page: 1,
       limit: 10,
@@ -71,7 +89,7 @@ Page({
        url: `/pages/activity/goods_combination_details/index?id=${item.activity.id}`
      });
    } else {
-     wx.navigateTo({ url: `/pages/goods_details/index?id=${item.id}` });
+     wx.navigateTo({ url: `/pages/dec_goods_details/index?id=${item.id}` });
    }
    },
   Changswitch:function(){
@@ -153,7 +171,7 @@ Page({
     if (that.data.loading) return;
     if (isPage === true) that.setData({ productList: [] });
     that.setData({ loading: true, loadTitle: '' });
-    getProductslist(that.data.where).then(res=>{
+    getDecProductslist(that.data.where).then(res=>{
       let list = res.data;
       let productList = app.SplitArray(list, that.data.productList);
       let loadend = list.length < that.data.where.limit;
@@ -185,7 +203,6 @@ Page({
   getIndexGroomList: function () {
     var that = this;
     getGroomList(that.data.type).then(res=>{
-      console.log(res)
       that.setData({ imgUrls: res.data.banner})
     });
   },
@@ -193,9 +210,56 @@ Page({
     var that=this;
     getZoneList().then(res=>{
       console.log(res)
+      that.setData({
+        zone_list:res.data,
+        multiArray:[that.filter_arr(res.data,'cate_name'),that.filter_arr(res.data[0]['village'],'cate_name')]
+      })
     })
   },
-
+  //按字段过滤数组
+  filter_arr(arr,name){
+    var a=new Array();
+    arr.forEach(item=>{
+      a.push(item['cate_name'])
+    })
+    return a;
+  },
+  bindMultiPickerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    var that=this;
+    this.setData({
+        multiIndex: e.detail.value,
+        zone_name:that.data.zone_list[e.detail.value[0]]['village'][e.detail.value[1]]['cate_name']
+    })
+    //重新搜索
+    var zone_cate_id=that.data.zone_list[e.detail.value[0]]['village'][e.detail.value[1]]['id']
+    console.log('所选id为',zone_cate_id)
+    that.data.where.zone_cate_id=zone_cate_id
+    this.setData({ where: this.data.where });
+    this.setData({ loadend: false, ['where.page']: 1 });
+    this.get_product_list(true);
+},
+bindMultiPickerColumnChange: function (e) {
+  var that=this;
+  console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
+  var multiArray = this.data.multiArray,
+      multiIndex = this.data.multiIndex
+  // console.log(e.detail)
+  multiIndex[e.detail.column] = e.detail.value;
+  switch (e.detail.column) {
+      case 0:
+          switch (multiIndex[0]) {
+              case multiIndex[0]:
+                  multiArray[1] = that.filter_arr(that.data.zone_list[multiIndex[0]]['village'],'cate_name');
+                  break;
+          }
+  }
+  console.log(multiIndex);
+  this.setData({
+      multiArray,
+      multiIndex
+  });
+},
   /**
    * 生命周期函数--监听页面隐藏
    */

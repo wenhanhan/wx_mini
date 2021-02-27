@@ -26,6 +26,7 @@
     "pages/user_sgin_list/index",
     "pages/order_list/index",
     "pages/goods_details/index",
+    "pages/dec_goods_details/index",
     "pages/goods_details_store/index",
     "pages/news_details/index",
     "pages/promoter-list/index",

@@ -15,5 +15,5 @@
           <navigator hover-class='none' url='/pages/order_addcart/order_addcart'  open-type='switchTab' class='iconfont icon-caigou-xianxing'></navigator>
           <navigator hover-class='none' url='/pages/user/user'  open-type='switchTab' class='iconfont icon-yonghu1'></navigator>
       </view>
-   <view class='pictrue {{homeActive==true?"on":""}}' bindtap='open'><image src='{{homeActive==false?"/images/close.gif":"/images/open.gif"}}'></image></view>
+   <view class='pictrue {{homeActive==true?"on":""}}' bindtap='open'><image src='{{homeActive==false?"/images/close.png":"/images/open.png"}}'></image></view>
 </view>

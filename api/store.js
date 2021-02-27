@@ -110,6 +110,14 @@ export function getCategoryList(){
 export function getProductslist(data){
   return request.get('products',data,{noAuth:true});
 }
+/**
+ * 获取装修清单产品列表
+ * @param object data
+*/
+export function getDecProductslist(data){
+  return request.get('dec_products',data,{noAuth:true});
+}
+
 
 /**
  * 首页产品的轮播图和产品信息

@@ -82,6 +82,7 @@ Component({
       this.setData({
         productAttr: this.data.productAttr,
       });
+      console.log(this.data.productAttr)
       var value = this.getCheckedValue().sort().join(',');
       this.triggerEvent('ChangeAttr',value);
     },

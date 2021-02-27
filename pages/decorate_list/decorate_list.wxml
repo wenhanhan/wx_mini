@@ -14,10 +14,12 @@
    </view>
    <swipers imgUrls="{{imgUrls}}"></swipers>
    <view class='nav acea-row row-middle'>
-     <view class='item {{title ? "font-color1":""}}' style="display:flex;justify-content:center;align-items:center;" bindtap='more_zone' data-type='1'>
-        {{title ? title:'默认'}}
-         <image style="width:32rpx;height:20rpx" src="/images/xiala.png"></image>
-     </view>
+      <picker class="item" mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+         <view class='{{title ? "font-color1":""}}' style="display:flex;justify-content:center;align-items:center;"  data-type='1'>
+            <text>{{zone_name}}</text>
+            <image style="width:32rpx;height:20rpx" src="/images/xiala.png"></image>
+         </view>
+      </picker>
      <view class='item' bindtap='set_where' data-type='2'>
       价格
       <image wx:if="{{price==1}}" src='/images/up.png'></image>
