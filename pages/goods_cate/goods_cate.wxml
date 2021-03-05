@@ -8,13 +8,13 @@
    </view>
    <view class='aside' style='top:{{navH}}rpx;margin-top:98rpx'>
       <block wx:for="{{productList}}" wx:for-item="item" wx:key='index'>
-         <view class='item acea-row row-center-wrapper {{index==navActive?"on":""}}' data-index='{{index}}' data-id='b{{index}}' bindtap='tap'><text>{{item.cate_name}}</text></view>
+         <view wx:if="{{item.cate_name!='装修清单'&&item.cate_name!='积分商城'}}" class='item acea-row row-center-wrapper {{index==navActive?"on":""}}' data-index='{{index}}' data-id='b{{index}}' bindtap='tap'><text>{{item.cate_name}}</text></view>
       </block>
    </view>
    <view class='conter'>
      <scroll-view scroll-y="true" scroll-into-view="{{toView}}" style='height:{{height}}rpx;' bindscroll="scroll" scroll-with-animation='true'>
         <block wx:for="{{productList}}" wx:key='index'>
-          <view class='listw' id="b{{index}}">
+          <view class='listw' id="b{{index}}" wx:if="{{item.cate_name!='装修清单'&&item.cate_name!='积分商城'}}">
             <view class='title acea-row row-center-wrapper'>
                 <view class='line'></view>
                 <view class='name'>{{item.cate_name}}</view>

@@ -64,7 +64,7 @@
   </view>
   <view class='moneyList'>
     <view class='item acea-row row-between-wrapper' wx:if="{{priceGroup.storePostage > 0}}">
-      <view>运费：</view>
+      <view>运费：</view> 
       <view class='money'>{{priceGroup.storePostage}}</view>
     </view>
   </view>

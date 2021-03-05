@@ -695,29 +695,29 @@ Page({
    * @param function successFn 下载完成回调
    * 
   */
-  downloadFilePromotionCode: function (successFn) {
-    var that = this;
-    getProductCode(this.data.id).then(res => {
-      wx.downloadFile({
-        url: that.setDomain(res.data.code),
-        success: function (res) {
-          console.log(res)
-          that.setData({ isDown: false });
-          if (typeof successFn == 'function')
-            successFn && successFn(res.tempFilePath);
-          else
-            that.setData({ PromotionCode: res.tempFilePath });
-        },
-        fail: function () {
-          that.setData({ isDown: false });
-          that.setData({ PromotionCode: '' });
-        },
-      });
-    }).catch(err => {
-      that.setData({ isDown: false });
-      that.setData({ PromotionCode: '' });
+ downloadFilePromotionCode: function (successFn) {
+  var that = this;
+  getProductCode(this.data.id).then(res=>{
+    console.log(res.data.code)
+    wx.downloadFile({
+      url: that.setDomain(res.data.code),
+      success: function (res) {
+        that.setData({ isDown:false});
+        if (typeof successFn == 'function')
+          successFn && successFn(res.tempFilePath);
+        else
+          that.setData({ PromotionCode: res.tempFilePath });
+      },
+      fail: function () {
+        that.setData({ isDown: false });
+        that.setData({ PromotionCode: '' });
+      },
     });
-  },
+  }).catch(err=>{
+    that.setData({ isDown: false });
+    that.setData({ PromotionCode: '' });
+  });
+},
   /**
    * 生成海报
   */
@@ -730,7 +730,8 @@ Page({
     wx.getImageInfo({
       src: that.data.PromotionCode,
       fail: function (res) {
-        return app.Tips({ 'title': '小程序二维码需要发布正式版后才能获取到' });
+        console.log(res)
+        return app.Tips({ 'title': '小程序二维码需要发布正式版后才能获取到' }); 
       },
       success() {
         if (arr2[2] == '') {

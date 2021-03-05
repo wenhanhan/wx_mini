@@ -545,6 +545,7 @@ Page({
   downloadFilePromotionCode: function (successFn) {
     var that = this;
     getProductCode(this.data.id).then(res=>{
+      console.log(res.data.code)
       wx.downloadFile({
         url: that.setDomain(res.data.code),
         success: function (res) {
@@ -572,10 +573,11 @@ Page({
     that.setData({ canvasStatus: true });
     var arr2 = [that.data.posterbackgd, that.data.storeImage, that.data.PromotionCode];
     if(that.data.isDown) return app.Tips({title:'正在下载海报,请稍后再试！'});
+    console.log(arr2)
     wx.getImageInfo({
       src: that.data.PromotionCode,
       fail: function (res) {
-        return app.Tips({ 'title': '小程序二维码需要发布正式版后才能获取到' });
+        return app.Tips({ 'title': '小程序二维码需要发布正式版后才能获取到' }); 
       },
       success(){
         if (arr2[2] == '') {
