@@ -7,7 +7,7 @@
 .order-submission .address .addressCon .default{margin-right:12rpx;}
 .order-submission .address .addressCon .setaddress{color:#333;font-size:28rpx;}
 .order-submission .address .iconfont{font-size:35rpx;color:#707070;}
-.order-submission .allAddress {width: 100%;background-image: linear-gradient(to bottom, #e93323 0%, #f5f5f5 100%);background-image: -webkit-linear-gradient(to bottom,#e93323 0%, #f5f5f5 100%);background-image: -moz-linear-gradient(to bottom, #e93323 0%, #f5f5f5 100%);
+.order-submission .allAddress {width: 100%;background-image: linear-gradient(to bottom, #3BA4EA 0%, #f5f5f5 100%);background-image: -webkit-linear-gradient(to bottom,#3BA4EA 0%, #f5f5f5 100%);background-image: -moz-linear-gradient(to bottom, #3BA4EA 0%, #f5f5f5 100%);
   padding-top: 100rpx;}
 .order-submission .allAddress .nav {width: 710rpx;margin: 0 auto;}
 .order-submission .allAddress .nav .item {width: 355rpx;}
@@ -44,7 +44,7 @@
   width: 400rpx;
   border-width: 0 0 60rpx 60rpx;
   border-style: none solid solid;
-  border-color: transparent transparent #f7c1bd;
+  border-color: transparent transparent #83CDFF;
   border-radius: 40rpx 6rpx 0 0;
   text-align: center;
   line-height: 60rpx;

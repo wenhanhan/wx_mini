@@ -7,7 +7,7 @@
 .order-submission .address .addressCon .default{margin-right:12rpx;}
 .order-submission .address .addressCon .setaddress{color:#333;font-size:28rpx;}
 .order-submission .address .iconfont{font-size:35rpx;color:#707070;}
-.order-submission .allAddress {width: 100%;background-image: linear-gradient(to bottom, #e93323 0%, #f5f5f5 100%);background-image: -webkit-linear-gradient(to bottom,#e93323 0%, #f5f5f5 100%);background-image: -moz-linear-gradient(to bottom, #e93323 0%, #f5f5f5 100%);
+.order-submission .allAddress {width: 100%;background-image: linear-gradient(to bottom, #3BA4EA 0%, #f5f5f5 100%);background-image: -webkit-linear-gradient(to bottom,#3BA4EA 0%, #f5f5f5 100%);background-image: -moz-linear-gradient(to bottom, #3BA4EA 0%, #f5f5f5 100%);
   padding-top: 100rpx;}
 .order-submission .allAddress .nav {width: 710rpx;margin: 0 auto;}
 .order-submission .allAddress .nav .item {width: 355rpx;}
@@ -44,7 +44,7 @@
   width: 400rpx;
   border-width: 0 0 60rpx 60rpx;
   border-style: none solid solid;
-  border-color: transparent transparent #f7c1bd;
+  border-color: transparent transparent #83CDFF;
   border-radius: 40rpx 6rpx 0 0;
   text-align: center;
   line-height: 60rpx;
@@ -77,7 +77,7 @@
 .order-submission .wrapper .item .placeholder{color:#ccc;}
 .order-submission .wrapper .item .list{margin-top:35rpx;}
 .order-submission .wrapper .item .list .payItem{border:1px solid #eee;border-radius:6rpx;height:86rpx;width:100%;box-sizing:border-box;margin-top:20rpx;font-size:28rpx;color:#282828;}
-.order-submission .wrapper .item .list .payItem.on{border-color:#fc5445;color:#e93323;}
+.order-submission .wrapper .item .list .payItem.on{border-color:#3BA4EA;color:#3BA4EA;}
 .order-submission .wrapper .item .list .payItem .name{width:50%;text-align:center;border-right:1px solid #eee;}
 .order-submission .wrapper .item .list .payItem .name .iconfont{width:44rpx;height:44rpx;border-radius:50%;text-align:center;line-height:44rpx;background-color:#fe960f;color:#fff;font-size:30rpx;margin-right:15rpx;}
 .order-submission .wrapper .item .list .payItem .name .iconfont.icon-weixin2{background-color:#41b035;}

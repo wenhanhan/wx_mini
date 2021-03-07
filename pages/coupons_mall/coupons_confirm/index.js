@@ -10,7 +10,7 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {
+  data: { 
     btn_state:true,
     textareaStatus:true,
     parameter: {
@@ -99,7 +99,7 @@ Page({
     }
     storeListApi(data).then(res => {
       let list = res.data.list || [];
-      this.setData({
+      this.setData({ 
         storeList: list,
         system_store: list[0],
       });
@@ -122,12 +122,19 @@ Page({
       useIntegral: this.data.useIntegral ? 1 : 0,
       couponId: this.data.couponId,
       shipping_type: parseInt(shippingType) + 1,
-      payType: this.data.payType
+      payType: this.data.payType,
+      is_jifen_shop:1//积分商城计算价格算法 
     }).then(res=>{
       console.log(res.data)
       let result = res.data.result;
+      console.log(this.data.userInfo.integral)
+      if(result.total_price*1>this.data.userInfo.integral*1){
+        this.setData({
+          btn_state:false
+        })
+      }
       if (result){
-        this.setData({ 
+        this.setData({  
           totalPrice: result.pay_price, 
           integral_price: result.deduction_price, 
           coupon_price: result.coupon_price, 
@@ -139,6 +146,7 @@ Page({
   },
   addressType:function(e){
     let index = e.currentTarget.dataset.index;
+    console.log(this.data.storeList)
     if (this.data.storeList.length>0){
       this.setData({ shippingType: parseInt(index) });
     }else{
@@ -257,15 +265,16 @@ Page({
       });
       console.log(that.data.totalPrice)
       //兑换状态判断
-      if(res.data.userInfo.integral<that.data.totalPrice){
-        that.setData({
-          btn_state:false
-        })
-      }
+      // if(res.data.userInfo.integral<that.data.totalPrice){
+      //   that.setData({
+      //     btn_state:false
+      //   })
+      // }
       that.data.cartArr[1].title = '可用余额:' + res.data.userInfo.now_money;
       if (res.data.offline_pay_status == 2)  that.data.cartArr.pop();
       that.setData({ cartArr: that.data.cartArr, ChangePrice: that.data.totalPrice });
     that.ChangeIntegral()
+    that.getList();
     }).catch(err=>{
       return app.Tips({ title: err }, { tab: 3, url: 1 });
     });
@@ -389,7 +398,8 @@ Page({
       mark: that.data.mark,
       store_id: that.data.system_store ? that.data.system_store.id : 0,
       'from':'routine',
-      shipping_type: app.help().Add(that.data.shippingType,1)
+      shipping_type: app.help().Add(that.data.shippingType,1),
+      is_jifen_shop:1
     };
     if (data.payType == 'yue' && parseFloat(that.data.userInfo.now_money) < parseFloat(that.data.totalPrice)) return app.Tips({title:'余额不足！'});
     wx.showLoading({ title: '订单支付中'});

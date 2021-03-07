@@ -19,13 +19,14 @@
       </view>
       <view class='iconfont icon-jiantou'></view>
     </view>
-    <view class='address acea-row row-between-wrapper' wx:else>
-      <view class='addressCon'>
+    <view class='address acea-row row-between-wrapper' wx:else bindtap="showStoreList">
+      <view class='addressCon' wx:if="{{storeList.length!==0}}">
         <view class='name'>{{system_store.name}}
-          <text class='phone'>{{system_store.phone}}</text>
+            <text class='phone'>{{system_store.phone}}</text>
         </view>
-        <view> {{ system_store._detailed_address }}</view>
+        <view> {{system_store.address}}{{", " + system_store.detailed_address}}</view>
       </view>
+      <view class='iconfont icon-jiantou'></view>
     </view>
     <view class='line'>
       <image src='/images/line.jpg'></image>

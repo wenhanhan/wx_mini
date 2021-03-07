@@ -85,7 +85,7 @@ Page({
   },
   /**
   * 获取门店列表数据
- */
+ */ 
   getList: function () {
     let longitude = wx.getStorageSync(CACHE_LONGITUDE); //经度
     let latitude = wx.getStorageSync(CACHE_LATITUDE); //纬度
@@ -120,7 +120,8 @@ Page({
       useIntegral: this.data.useIntegral ? 1 : 0,
       couponId: this.data.couponId,
       shipping_type: parseInt(shippingType) + 1,
-      payType: this.data.payType
+      payType: this.data.payType,
+      is_jifen_shop:0,//非积分商城计算价格算法  正常商城模式
     }).then(res=>{
       let result = res.data.result;
       if (result){
@@ -377,7 +378,8 @@ Page({
       mark: that.data.mark,
       store_id: that.data.system_store ? that.data.system_store.id : 0,
       'from':'routine',
-      shipping_type: app.help().Add(that.data.shippingType,1)
+      shipping_type: app.help().Add(that.data.shippingType,1),
+      is_jifen_shop:0
     };
     if (data.payType == 'yue' && parseFloat(that.data.userInfo.now_money) < parseFloat(that.data.totalPrice)) return app.Tips({title:'余额不足！'});
     wx.showLoading({ title: '订单支付中'});
