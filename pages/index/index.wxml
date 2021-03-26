@@ -200,4 +200,33 @@
     </view>
 </view>
 <coupon-window window='{{window}}' couponList="{{couponList}}" bind:onColse="onColse"></coupon-window>
+<!-- 客服弹窗 -->
+<view class="cus-mask" hidden="{{!customerMask}}">
+   <view class="cus-mask-title">
+      <view class="cus-mask-title-left">
+         <view class="cus-img">
+            <image src="/images/custom.png"></image>
+         </view>
+      </view>
+      <view class="cus-mask-title-right">
+         <text>伟星在线</text>
+         <text style="color:#7A7A7A;font-size:24rpx;font-weight:normal;margin-top:4rpx">7*24小时获取专业工程师的帮助</text>
+      </view>
+      <view class="cus-mask-close" bindtap="cusMaskClose">
+         <text class='iconfont-close icon-guanbi'></text>
+      </view>
+   </view>
+   <view class="cus-mask-words">
+      <text>Hi，我是您的智能客服~</text>
+   </view>
+   <button class="cus-mask-bottom" open-type='contact' hover-class='none'>
+      <view class="cus-mask-input">
+         <text>输入您的问题吧~</text>
+      </view>
+      <view class="cus-mask-btn">
+         <text>发送</text>
+      </view>
+   </button>
+</view>
+
 <home></home>

@@ -162,6 +162,10 @@
          <view>运费：</view>
          <view class='conter'>￥{{orderInfo.pay_postage}}</view>
       </view>
+      <view class='item acea-row row-between' wx:if="{{construction_cost > 0}}">
+         <view>施工费用：</view>
+         <view class='conter'>￥{{construction_cost}}</view>
+      </view>
       <view class='actualPay acea-row row-right'>实付款：<text class='money font-color'>￥{{orderInfo.pay_price}}</text></view>
    </view>
    <view style='height:120rpx;'></view>

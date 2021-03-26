@@ -41,6 +41,7 @@ Page({
     selfLatitude: '',
     liveList: [],
     liveInfo:{},
+    customerMask:''//客服弹窗
   },
   closeTip:function(){
     wx.setStorageSync('msg_key',true);
@@ -53,6 +54,7 @@ Page({
    */
   onLoad: function (options) {
     wxh.selfLocation(1);
+    console.log(app.globalData.customerMask)
     this.setData({
       navH: app.globalData.navHeight
     });
@@ -112,6 +114,13 @@ Page({
       url: '/pages/goods_search/index',
     })
  },
+ //关闭客服弹窗
+ cusMaskClose:function(){
+    app.globalData.customerMask=false
+    this.setData({
+      customerMask:false
+    })
+ },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -135,7 +144,9 @@ Page({
   getIndexConfig:function(){
     var that = this;
     getIndexData().then(res=>{
+      app.globalData.construction_cost=res.data.construction_cost
       that.setData({
+        customerMask:app.globalData.customerMask,
         imgUrls: res.data.banner,
         menus: res.data.menus,
         itemNew: res.data.roll,
