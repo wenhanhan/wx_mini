@@ -188,6 +188,31 @@
         <image src='{{newGoodsBananr}}'></image>
       </block>  
     </view>
+    <!-- 首发新品 -->
+    <view class='wrapper' wx:if="{{firstList.length}}">
+       <view class='title acea-row row-between-wrapper'>
+          <view class='text'>
+             <view class='name line1'>首发新品<text class='new font-color'>NEW~</text></view>
+             <view class='line1'>{{firstInfo}}</view>
+          </view>
+          <navigator class='more' hover-class="none" url='/pages/first-new-product/index?type=3'>更多<text class='iconfont icon-jiantou'></text></navigator>
+       </view>
+       <view class='newProducts'>
+          <scroll-view class="scroll-view_x" scroll-x style="width:auto;overflow:hidden;">
+              <block wx:for="{{firstList}}" wx:key='index'>
+                 <view class='item'>
+                    <view class='img-box' bindtap="goDetail" data-items='{{item}}'>
+                      <image src='{{item.image}}'></image>
+                      <text class="pictrue_log_medium pictrue_log_class" wx:if="{{item.activity && item.activity.type ==='1'}}">秒杀</text>
+                      <text class="pictrue_log_medium pictrue_log_class" wx:if="{{item.activity && item.activity.type === '3'}}">拼团</text>
+                    </view>
+                    <view class='pro-info line1'>{{item.store_name}}</view>
+                    <view class='money font-color'>￥{{item.price}}</view>
+                 </view>
+              </block>  
+           </scroll-view>
+        </view>
+    </view>
     <view class='wrapper' wx:if="{{benefit.length}}">
        <view class='title acea-row row-between-wrapper'>
           <view class='text'>

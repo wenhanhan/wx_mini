@@ -33,7 +33,6 @@ Page({
     pay_order_id: '',
     totalPrice: '0',
     generalActive:false,
-    construction_cost:0,//装修费用
     generalContent:{
       promoterNum:'',
       title:''
@@ -307,9 +306,6 @@ Page({
     if (app.globalData.isLog && this.data.isClose) {
       this.getOrderInfo();
     }
-    this.setData({
-      construction_cost:app.globalData.construction_cost
-    })
   },
 
   /**

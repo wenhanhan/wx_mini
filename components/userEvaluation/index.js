@@ -10,7 +10,7 @@ Component({
     
   },
   attached: function () {
-
+ 
   },
   methods: {
     getpreviewImage:function(e){

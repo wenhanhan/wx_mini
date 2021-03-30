@@ -144,7 +144,6 @@ Page({
   getIndexConfig:function(){
     var that = this;
     getIndexData().then(res=>{
-      app.globalData.construction_cost=res.data.construction_cost
       that.setData({
         customerMask:app.globalData.customerMask,
         imgUrls: res.data.banner,

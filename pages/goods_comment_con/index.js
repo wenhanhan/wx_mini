@@ -20,6 +20,7 @@ Page({
       { 'name': '服务态度','stars':0},
     ],
     pics:[],
+    videos:[],
     orderId:'',
     unique:'',
     productInfo:{},
@@ -67,6 +68,15 @@ Page({
     that.data.pics.splice(index, 1);
     that.setData({ pics: that.data.pics });
   },
+   /**
+   * 删除视频
+   * 
+  */
+ DelVideo: function (e) {
+  var index = e.target.dataset.index, that = this, video = this.data.videos[index];
+  that.data.videos.splice(index, 1);
+  that.setData({ videos: that.data.videos });
+},
 
   /**
    * 上传文件
@@ -74,12 +84,29 @@ Page({
   */
   uploadpic: function () {
     var that = this;
-    util.uploadImageOne('upload/image', function (res) {
-      that.data.pics.push(res.data.url);
-      that.setData({ pics: that.data.pics });
-    });
+    wx.showActionSheet({
+      itemList: ['照片', '视频'],
+      success (res) {
+        console.log(res.tapIndex)
+        if(res.tapIndex==0){
+          util.uploadImageOne('upload/image', function (res) {
+            that.data.pics.push(res.data.url);
+            that.setData({ pics: that.data.pics });
+          });
+        }else{
+          //上传视频
+          util.uploadVideoOne('upload/video', function (res) {
+            that.data.videos.push(res.data.url);
+            that.setData({ videos: that.data.videos });
+          });
+        }
+      },
+      fail (res) {
+        console.log(res.errMsg)
+      }
+    })
   },
-
+ 
   /**
    * 立即评价
   */
@@ -90,6 +117,7 @@ Page({
     value.product_score = product_score;
     value.service_score = service_score;
     value.pics=that.data.pics;
+    value.videos=that.data.videos;
     value.unique = that.data.unique;
     wx.showLoading({ title: "正在发布评论……" });
     orderComment(value).then(res=>{

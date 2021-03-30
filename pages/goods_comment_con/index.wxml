@@ -9,7 +9,7 @@
             <view>￥{{productInfo.price}}</view>
             <view class='num'>x{{cart_num}}</view>
          </view>
-      </view>
+      </view> 
    </view>
    <view class='score'>
        <view class='item acea-row row-middle' wx:for='{{scoreList}}' wx:key='index'>
@@ -30,9 +30,21 @@
                <image src='{{item}}'></image>
                <text class='iconfont icon-guanbi1 font-color' data-index='{{index}}' bindtap='DelPic'></text>
              </view>
-             <view class='pictrue acea-row row-center-wrapper row-column' bindtap='uploadpic' wx:if="{{pics.length < 8}}">
+             <view class='pictrue' wx:for="{{videos}}" wx:key='index'>
+               <video 
+                  id="myVideo" 
+                  src="{{item}}" 
+                  show-center-play-btn='{{true}}' 
+                  show-play-btn="{{true}}" 
+                  show-fullscreen-btn="{{true}}"
+                  controls
+                  picture-in-picture-mode="{{['push', 'pop']}}"
+               ></video>
+               <text class='iconfont icon-guanbi1 font-color' data-index='{{index}}' bindtap='DelVideo'></text>
+             </view>
+             <view class='pictrue acea-row row-center-wrapper row-column' bindtap='uploadpic' wx:if="{{pics.length < 8&&videos.length<4}}">
                <text class='iconfont icon-icon25201'></text>
-               <view>上传图片</view>
+               <view>图片/视频</view>
              </view>
           </view>
        </view>

@@ -13,6 +13,19 @@
           <view class='pictrue' wx:for="{{item.pics}}" wx:for-item="items" wx:for-index='pic_index' wx:key='index'>
             <image  wx:if="{{items}}" src='{{items}}' data-index="{{index}}" data-pic_index='{{pic_index}}' bindtap='getpreviewImage'></image>
           </view>
+          <!-- 视频预览 -->
+          <view class='pictrue' wx:for="{{item.videos}}" wx:for-item="items" wx:for-index='pic_index' wx:key='index'>
+            <video 
+                  id="myVideo" 
+                  src="{{items}}" 
+                  show-center-play-btn='{{true}}' 
+                  show-play-btn="{{true}}" 
+                  show-fullscreen-btn="{{true}}"
+                  controls
+                  picture-in-picture-mode="{{['push', 'pop']}}"
+               >
+            </video>
+          </view>
       </view>
       <view class='reply' wx:if='{{item.merchant_reply_content}}'><text class='font-color'>店小二</text>:{{item.merchant_reply_content}}</view>
    </view> 

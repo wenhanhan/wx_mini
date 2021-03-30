@@ -368,7 +368,62 @@ const uploadImageOne=function (opt, successCallback, errorCallback) {
     }
   })
 }
-
+/*
+* 单视频上传 新增功能
+* @param object opt
+* @param callable successCallback 成功执行方法 data 
+* @param callable errorCallback 失败执行方法 
+*/
+const uploadVideoOne=function (opt, successCallback, errorCallback) {
+  if (typeof opt === 'string') {
+    var url = opt;
+    opt = {};
+    opt.url = url;
+  }
+  var compressed = opt.compressed || true, sourceType = opt.sourceType || ['album', 'camera'],
+    is_load = opt.is_load || true, uploadUrl = opt.url || '', inputName = opt.name || 'videos',maxDuration=opt.maxDuration || 15;
+    wx.chooseVideo({
+      sourceType: sourceType,
+      maxDuration: maxDuration,
+      compressed:compressed,
+      camera: 'back',
+      success(res) {
+      //启动上传等待中...  
+      wx.showLoading({
+        title: '视频上传中',
+      });
+      wx.uploadFile({
+        url: getApp().globalData.url+'/api/'+uploadUrl,
+        filePath: res.tempFilePath,
+        name: inputName,
+        formData: {
+          'filename': inputName
+        },
+        header: {
+          "Content-Type": "multipart/form-data",
+          [TOKENNAME]: 'Bearer '+getApp().globalData.token
+        },
+        success: function (res) {
+          wx.hideLoading();
+          if (res.statusCode == 403) {
+            Tips({ title: res.data });
+          } else {
+            var data = res.data ? JSON.parse(res.data) : {};
+            if (data.status == 200) {
+              successCallback && successCallback(data)
+            } else {
+              errorCallback && errorCallback(data);
+              Tips({ title: data.msg });
+            }
+          }
+        }, fail: function (res) {
+          wx.hideLoading();
+          Tips({ title: '上传视频失败' });
+        }
+      })
+      }
+    })
+}
 /**
  * 移除数组中的某个数组并组成新的数组返回
  * @param array array 需要移除的数组
@@ -531,6 +586,7 @@ module.exports = {
   $h:$h,
   Tips: Tips,
   uploadImageOne: uploadImageOne,
+  uploadVideoOne:uploadVideoOne,
   SplitArray: SplitArray,
   ArrayRemove: ArrayRemove,
   PosterCanvas: PosterCanvas,

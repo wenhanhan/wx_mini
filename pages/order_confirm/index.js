@@ -39,8 +39,6 @@ Page({
     couponTitle:'请选择',//优惠券
     coupon_price:0,//优惠券抵扣金额
     useIntegral:false,//是否使用积分
-    useConstruction:false,//是否使用装修费
-    construction_cost:0,//装修费
     integral_price:0,//积分抵扣金额
     ChangePrice:0,//使用积分抵扣变动后的金额
     formIds:[],//收集formid
@@ -71,7 +69,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.setData({ textareaStatus: true,construction_cost:app.globalData.construction_cost });
+    this.setData({ textareaStatus: true});
     if (app.globalData.isLog && this.data.isClose && this.data.toPay==false) {
       this.getaddressInfo();
       this.selectComponent('#address-window').getAddressList();
@@ -120,7 +118,6 @@ Page({
     postOrderComputed(this.data.orderKey,{
       addressId: this.data.addressId,
       useIntegral: this.data.useIntegral ? 1 : 0,
-      useConstruction:this.data.useConstruction ? 1:0,
       couponId: this.data.couponId,
       shipping_type: parseInt(shippingType) + 1,
       payType: this.data.payType,
@@ -208,13 +205,6 @@ Page({
     this.setData({useIntegral:!this.data.useIntegral});
     this.computedPrice();
   },
-    /**
-   * 使用装修费
-  */
- ChangeConstruction:function(){
-  this.setData({useConstruction:!this.data.useConstruction});
-  this.computedPrice();
-},
   /**
    * 选择地址后改变事件
    * @param object e
@@ -381,7 +371,6 @@ Page({
       couponId: that.data.couponId,
       payType: that.data.payType,
       useIntegral: that.data.useIntegral,
-      useConstruction:that.data.useConstruction,
       bargainId: that.data.BargainId,
       combinationId: that.data.combinationId,
       pinkId: that.data.pinkId,

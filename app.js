@@ -87,7 +87,6 @@ App({
     userInfo:{},
     loginType:'routine',
     customerMask:true,//客服弹窗
-    construction_cost:0//装修费
   },
   /**
    * 聊天事件快捷注册
