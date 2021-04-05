@@ -96,6 +96,11 @@
     </view>
   </view>
   <view class='moneyList'>
+    <!-- 费用由后端计算 -->
+    <view class='item acea-row row-between-wrapper'>
+      <view>施工费用总价：</view>
+      <view class='money'>￥{{priceGroup.totalConstructionPrice}}</view>
+    </view>
     <view class='item acea-row row-between-wrapper'>
       <view>商品总价：</view>
       <view class='money'>￥{{priceGroup.totalPrice}}</view>

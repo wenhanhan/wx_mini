@@ -113,6 +113,7 @@ Page({
       url: '/pages/goods_details_store/index?go=order'
     })
   },
+  //重新计算价格 由后端计算返回
   computedPrice:function(){
     let shippingType = this.data.shippingType;
     postOrderComputed(this.data.orderKey,{
@@ -241,13 +242,13 @@ Page({
       that.setData({
         userInfo: res.data.userInfo,
         integral: res.data.userInfo.integral,
-        cartInfo: res.data.cartInfo,
+        cartInfo: res.data.cartInfo, 
         integralRatio: res.data.integralRatio,
         offlinePostage: res.data.offlinePostage,
         orderKey: res.data.orderKey,
         priceGroup: res.data.priceGroup,
-        totalPrice: app.help().Add(parseFloat(res.data.priceGroup.totalPrice), parseFloat(res.data.priceGroup.storePostage)),
-        seckillId: parseInt(res.data.seckill_id),
+        totalPrice: app.help().Add(app.help().Add(parseFloat(res.data.priceGroup.totalPrice), parseFloat(res.data.priceGroup.storePostage)),parseFloat(res.data.priceGroup.totalConstructionPrice)),//总费用加上施工费
+        seckillId: parseInt(res.data.seckill_id), 
         usableCoupon: res.data.usableCoupon,
         // system_store: res.data.system_store,
         store_self_mention: res.data.store_self_mention

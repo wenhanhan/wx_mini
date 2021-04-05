@@ -224,9 +224,10 @@ Page({
   */
   ChangeCartNum: function (e) {
     //是否 加|减
-    var changeValue = e.detail;
+    var changeValue = e.detail; 
     //获取当前变动属性
     var productSelect = this.data.productValue[this.data.attrValue];
+    console.log(this.data.cart_num)
     if (this.data.cart_num) {
       productSelect.cart_num = this.data.cart_num;
     };

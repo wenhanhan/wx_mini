@@ -1,7 +1,7 @@
 <view class="orderGoods">
   <view class='total'>共{{cartInfo.length}}件商品</view>
   <view class='goodWrapper'>
-     <view class='item acea-row row-between-wrapper' wx:for="{{cartInfo}}" wx:key='index'>
+     <view class='item acea-row row-between-wrapper' wx:for="{{cartInfo}}" wx:key='index' style="height:220rpx">
         <view class='pictrue'>
           <image src='{{item.productInfo.attrInfo.image}}' wx:if="{{item.productInfo.attrInfo}}"></image>
           <image src='{{item.productInfo.image}}' wx:else></image>
@@ -14,6 +14,10 @@
            <view class='attr line1' wx:if="{{item.productInfo.attrInfo}}">{{item.productInfo.attrInfo.suk}}</view>
            <view class='money font-color' wx:if="{{item.productInfo.attrInfo}}">￥{{item.productInfo.attrInfo.price}}</view>
            <view class='money font-color' wx:else>￥{{item.productInfo.price}}</view>
+           <!-- 增加施工费用 -->
+           <view class='money font-color' wx:if="{{item.productInfo.attrInfo}}">￥{{item.productInfo.attrInfo.construction_cost}}<text style="color:#868686;font-size:20rpx;">（施工费用）</text></view>
+           <view class='money font-color' wx:else>￥{{item.productInfo.construction_cost}}<text style="color:#868686;font-size:20rpx;">（施工费用）</text></view>
+
            <navigator class='evaluate font-color' wx:if='{{item.is_reply==0 && evaluate==3}}' hover-class="none" url='/pages/goods_comment_con/index?unique={{item.unique}}&uni={{orderId}}'>评价</navigator>
            <view class='evaluate' wx:elif='{{item.is_reply==1 && evaluate==3}}'>已评价</view>
         </view>

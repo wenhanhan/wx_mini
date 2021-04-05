@@ -17,7 +17,7 @@
          <view class='listn acea-row row-middle'>
             <view class='itemn {{item.checked==itemn.attr ?"on":""}}' wx:for='{{item.attr_value}}' wx:for-item='itemn' wx:for-index='indexn' data-indexw='{{index}}' data-indexn='{{indexn}}' bindtap='tapAttr' wx:key='index'>{{itemn.attr}}</view>
          </view>
-      </view>
+      </view> 
    </view>
    <view class='cart'>
        <view class='title'>数量</view>
@@ -34,3 +34,4 @@
    <view class="joinBnt on" wx:elif="{{(iSbnt && productSelect.quota<=0)||(iSbnt &&productSelect.product_stock<=0)}}">已售罄</view>
 </view>
 <view class='mask' catchtouchmove="true" hidden='{{attribute.cartAttr==false}}' bindtap='close'></view>
+ 

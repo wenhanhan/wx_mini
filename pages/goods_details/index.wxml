@@ -159,7 +159,7 @@
       </view>
       <view>购物车</view>
     </navigator>
-    <view class='bnt acea-row'>
+    <view class='bnt acea-row'> 
       <form bindsubmit="joinCart">
         <button class='joinCart bnts' formType="submit">加入购物车</button>
       </form>
