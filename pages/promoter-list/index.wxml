@@ -59,7 +59,7 @@
               <view class="right">
                   <view><text class='font-color'>{{item.childCount ? item.childCount : 0}}</text> 人</view>
                   <view>{{item.orderCount ? item.orderCount : 0}} 单</view>
-                  <view>{{item.numberCount ? item.numberCount : 0}} 元</view>
+                  <view>{{item.numberCount ? item.numberCount : 0}} 积分</view>
               </view>
           </view>
         </block>

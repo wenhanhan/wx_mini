@@ -22,7 +22,8 @@
             <view class='num'>{{userInfo.now_money || 0}}</view>
          </view>
          <view class='item' wx:if="{{userInfo.is_promoter || userInfo.statu==2}}" data-url='/pages/user_spread_user/index' bindtap='goPages'>
-            <view>当前佣金</view>
+            <!-- <view>当前佣金</view> -->
+            <view>推广积分</view>
             <view class='num'>{{userInfo.brokerage_price || 0}}</view>
          </view>
          <view class='item' wx:else data-url='/pages/user_integral/index' bindtap='goPages'>

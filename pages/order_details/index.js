@@ -244,7 +244,7 @@ Page({
             mask:true,
             title: '加载中',
           })
-          orderTake(that.data.order_id).then(res=>{
+          orderTake(that.data.order_id).then(res=>{ 
             wx.hideLoading();
             const generalContent="generalContent.promoterNum";
             const title="generalContent.title";

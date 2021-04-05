@@ -24,8 +24,8 @@
                       <view class='pictrue'><image src='{{child.avatar}}'></image></view>
                       <view class='text line1'>{{child.nickname}}</view>
                    </view>
-                   <view class='money' wx:if="{{child.type == 'pay_money'}}">暂未返佣</view>
-                   <view class='money' wx:else>返佣：<text class='font-color'>￥{{child.number}}</text></view>
+                   <view class='money' wx:if="{{child.type == 'pay_money'}}">暂未返积分</view>
+                   <view class='money' wx:else>返积分：<text class='font-color'>{{child.number}}</text></view>
                 </view>
                 <view class='bottom'>
                    <view><text class='name'>订单编号：</text>{{child.order_id}}</view>

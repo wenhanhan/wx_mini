@@ -16,7 +16,7 @@
        <view class='item'>
          <view class='num'>{{userInfo.today_integral}}</view>
          <view>今日获得</view>
-       </view>
+       </view> 
     </view>
   </view>
   <view class='wrapper'>

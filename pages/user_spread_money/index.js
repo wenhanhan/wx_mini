@@ -47,7 +47,7 @@ Page({
     if (type == 1) {
       this.setData({ 'parameter.title': '提现记录', name: '提现总额', recordType: 4 });
     } else if (type == 2) {
-      this.setData({ 'parameter.title': '佣金记录', name: '佣金记录', recordType: 3 });
+      this.setData({ 'parameter.title': '积分记录', name: '积分记录', recordType: 3 });
     } else {
       wx.showToast({
         title: '参数错误',

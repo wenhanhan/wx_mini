@@ -370,11 +370,14 @@
 .icon-kanjia1:before {
   content: "\e613";
 }
-
+/* 佣金图标 */
 .icon-qiandai:before {
   content: "\e6b1";
 }
-
+/* 积分 */
+.icon-jifen:before {
+  content: "\e6a4";
+}
 .icon-tongji:before {
   content: "\e687";
 }
