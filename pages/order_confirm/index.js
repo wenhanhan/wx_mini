@@ -41,6 +41,7 @@ Page({
     useIntegral:false,//是否使用积分
     integral_price:0,//积分抵扣金额
     ChangePrice:0,//使用积分抵扣变动后的金额
+    useConstruction:true,//是否使用施工费 默认选中
     formIds:[],//收集formid
     status:0,
     is_address:false,
@@ -119,6 +120,7 @@ Page({
     postOrderComputed(this.data.orderKey,{
       addressId: this.data.addressId,
       useIntegral: this.data.useIntegral ? 1 : 0,
+      useConstruction:this.data.useConstruction?1:0,//施工费用
       couponId: this.data.couponId,
       shipping_type: parseInt(shippingType) + 1,
       payType: this.data.payType,
@@ -206,6 +208,13 @@ Page({
     this.setData({useIntegral:!this.data.useIntegral});
     this.computedPrice();
   },
+   /**
+   * 使用施工费
+  */
+ ChangeConstruction:function(){
+  this.setData({useConstruction:!this.data.useConstruction});
+  this.computedPrice();
+},
   /**
    * 选择地址后改变事件
    * @param object e
@@ -372,6 +381,7 @@ Page({
       couponId: that.data.couponId,
       payType: that.data.payType,
       useIntegral: that.data.useIntegral,
+      useConstruction:that.data.useConstruction,
       bargainId: that.data.BargainId,
       combinationId: that.data.combinationId,
       pinkId: that.data.pinkId,

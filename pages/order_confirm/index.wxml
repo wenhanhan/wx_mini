@@ -51,6 +51,18 @@
         </checkbox-group>
       </view>
     </view>
+    <!-- 客户自主选择施工费 -->
+    <view class='item acea-row row-between-wrapper' wx:if="{{priceGroup.totalConstructionPrice>0}}">
+      <view>施工费用</view>
+      <view class='discount acea-row row-middle'>
+        <view> {{useConstruction ? "已开启":"已关闭"}}
+          <text class='num font-color'> </text>
+        </view>
+        <checkbox-group bindchange="ChangeConstruction">
+          <checkbox checked='{{useConstruction ? true : false}}' />
+        </checkbox-group>
+      </view>
+    </view>
     <view class='item acea-row row-between-wrapper' wx:if="{{priceGroup.vipPrice > 0 && userInfo.vip && !pinkId && !BargainId && !combinationId && !seckillId}}">
       <view>会员优惠</view>
       <view class='discount'>-￥{{priceGroup.vipPrice}}</view>
@@ -97,7 +109,7 @@
   </view>
   <view class='moneyList'>
     <!-- 费用由后端计算 -->
-    <view class='item acea-row row-between-wrapper'>
+    <view class='item acea-row row-between-wrapper' wx:if="{{priceGroup.totalConstructionPrice>0&&useConstruction}}">
       <view>施工费用总价：</view>
       <view class='money'>￥{{priceGroup.totalConstructionPrice}}</view>
     </view>
