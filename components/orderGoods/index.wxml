@@ -20,6 +20,15 @@
 
            <navigator class='evaluate font-color' wx:if='{{item.is_reply==0 && evaluate==3}}' hover-class="none" url='/pages/goods_comment_con/index?unique={{item.unique}}&uni={{orderId}}'>评价</navigator>
            <view class='evaluate' wx:elif='{{item.is_reply==1 && evaluate==3}}'>已评价</view>
+           <!-- 施工费用单独计算 (⊙︿⊙)。。。 -->
+           <view class='discount acea-row row-middle'>
+              <view> {{item.productInfo.useConstruction ? "已开启":"已关闭"}}
+                <text style="margin-right:12rpx;" class='num font-color'> </text>
+              </view>
+              <checkbox-group data-index='{{index}}' bindchange="ChangeConstruction">
+                <checkbox checked='{{item.productInfo.useConstruction ? true : false}}' />
+              </checkbox-group>
+           </view>
         </view>
      </view>
   </view>

@@ -32,7 +32,7 @@
       <image src='/images/line.jpg'></image>
     </view>
   </view>
-  <orderGoods cartInfo="{{cartInfo}}"></orderGoods>
+  <orderGoods bindmyevent="myevent" cartInfo="{{cartInfo}}"></orderGoods>
   <view class='wrapper'>
     <view class='item acea-row row-between-wrapper' bindtap='coupon' wx:if="{{!pinkId && !BargainId && !combinationId && !seckillId}}">
       <view>优惠券</view>

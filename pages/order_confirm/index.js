@@ -53,7 +53,8 @@ Page({
     contacts:'',
     contactsTel:'',
     mydata: {},
-    storeList: []
+    storeList: [],
+    ids:'',//需要安装费用的cartInfoId 序列号=>由子组件传递过来
   },
   /**
    * 授权回调事件
@@ -125,6 +126,7 @@ Page({
       shipping_type: parseInt(shippingType) + 1,
       payType: this.data.payType,
       is_jifen_shop:0,//非积分商城计算价格算法  正常商城模式
+      ids:this.data.ids//cartInfoId
     }).then(res=>{
       let result = res.data.result;
       if (result){
@@ -214,6 +216,17 @@ Page({
  ChangeConstruction:function(){
   this.setData({useConstruction:!this.data.useConstruction});
   this.computedPrice();
+},
+ /**
+   * 子组件选择施工费用 将事件传递到父组件 获取ids 
+   * 重新计算施工费
+  */
+myevent:function(e){
+console.log(e.detail.params)
+this.setData({
+  ids:e.detail.params
+})
+this.computedPrice()
 },
   /**
    * 选择地址后改变事件
@@ -390,7 +403,8 @@ Page({
       store_id: that.data.system_store ? that.data.system_store.id : 0,
       'from':'routine',
       shipping_type: app.help().Add(that.data.shippingType,1),
-      is_jifen_shop:0
+      is_jifen_shop:0,
+      ids:that.data.ids
     };
     if (data.payType == 'yue' && parseFloat(that.data.userInfo.now_money) < parseFloat(that.data.totalPrice)) return app.Tips({title:'余额不足！'});
     wx.showLoading({ title: '订单支付中'});
